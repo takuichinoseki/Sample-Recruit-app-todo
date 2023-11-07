@@ -13,8 +13,8 @@ return new class extends Migration
     {
         Schema::create('user_occupations', function (Blueprint $table) {
             $table->id();
-            $table->integer('user_id');
-            $table->integer('occupation_id');
+            $table->foreignId('user_id')->constrained('user');
+            $table->foreignId('occupations_id')->constrained('occupations');
         });
     }
 
