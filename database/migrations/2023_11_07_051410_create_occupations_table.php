@@ -11,10 +11,9 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('user_occupations', function (Blueprint $table) {
+        Schema::create('occupations', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('user_id')->constrained('user');
-            $table->foreignId('occupations_id')->constrained('occupations');
+            $table->string('name'); //職種名
         });
     }
 
@@ -23,6 +22,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('user_occupations');
+        Schema::dropIfExists('occupations');
     }
 };

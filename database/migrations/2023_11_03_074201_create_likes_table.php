@@ -13,8 +13,8 @@ return new class extends Migration
     {
         Schema::create('likes', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('job_id')->constrained();
-            $table->foreignId('user_id')->constrained();
+            $table->foreignId('jobs_id')->constrained('jobs');
+            $table->foreignId('users_id')->constrained('users');
             $table->timestamps();
         });
     }
